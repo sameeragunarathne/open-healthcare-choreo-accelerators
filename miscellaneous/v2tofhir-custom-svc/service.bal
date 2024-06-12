@@ -17,6 +17,10 @@ configurable V2ToFhirCustomServiceConfig serviceConfig = {
     segmentToAPI: {}
 };
 
+
+configurable map<string> fhirEndpoints = {
+};
+
 service /v2tofhir on new http:Listener(9091) {
 
     resource function get test() returns string|error{
