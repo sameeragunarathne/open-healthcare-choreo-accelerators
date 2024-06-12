@@ -35,10 +35,21 @@ type V2ToFhirInternalServerError record {|
     string body;
 |};
 
+// configurable v2tofhirr4:V2ToFhirCustomServiceConfig serviceConfig = {
+//     baseUrl: "http://localhost:9091/v2tofhir",
+//     segmentToAPI: {
+//         "NK1": {
+//             path: "/segment/nk1"
+//         }
+//     }
+// };
+
+configurable v2tofhirr4:V2ToFhirCustomServiceConfig serviceConfig = ?;
+
 service / on new http:Listener(9090) {
 
     resource function post transform(@http:Payload string hl7Message) returns V2ToFhirResponse|V2ToFhirBadRequest|V2ToFhirInternalServerError {
-        json|error v2tofhirResult = v2tofhirr4:v2ToFhir(hl7Message);
+        json|error v2tofhirResult = v2tofhirr4:v2ToFhir(hl7Message, serviceconf = serviceConfig);
         if v2tofhirResult is json {
             log:printDebug("Successfully transformed the HL7 message to FHIR.");
             return {body: v2tofhirResult};
