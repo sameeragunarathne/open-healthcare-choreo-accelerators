@@ -32,9 +32,9 @@ public enum ConsentCategory {
 
 public type PayerToPayerDataExchangeData record {
     PatientInfo patientInfo;
-    CoverageInfo newCoverage;
-    CoverageInfo[] oldOrConcurrentCoverage;
-    Consent consent;
+    // CoverageInfo newCoverage;
+    // CoverageInfo[] oldOrConcurrentCoverage;
+    // Consent consent;
 };
 
 public type PatientInfo record {
@@ -42,6 +42,7 @@ public type PatientInfo record {
     string name?;
     string dob?;
     uscore501:USCorePatientProfileGender gender?;
+    Identifier[] identifiers?;
     string[] address?;
 };
 

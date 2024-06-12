@@ -1,6 +1,18 @@
 import ballerina/io;
+import ballerina/sql;
 
-public isolated function getSqlStrings(string dbType) returns string[]|error {  
+
+public sql:ParameterizedQuery USER_CREATE = `INSERT INTO User (id, role) VALUES (?, ?)`;
+public sql:ParameterizedQuery USER_EXISTS_CHECK = `SELECT EXISTS (
+            SELECT 1 FROM User WHERE id = ?);`;
+
+public final string USER_CREATE_MYSQL = string`INSERT INTO User (id, role) VALUES (`;
+public final string ROLE_PATIENT_CHECK_MYSQL = string`SELECT id FROM Role WHERE name = 'patient'`;
+public final string USER_EXISTS_MYSQL = string`SELECT EXISTS (
+            SELECT 1 FROM User WHERE id `;
+public final string PATIENT_CREATE_MYSQL = string`INSERT INTO Patient (id, user, person_data) VALUES (`;
+
+public isolated function getDbSetupSqlStrings(string dbType) returns string[]|error {  
     string filePath = "";  
     if (dbType == MYSQL) {
         filePath = "resources/mysql/healthdatastore.sql";

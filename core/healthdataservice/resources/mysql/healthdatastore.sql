@@ -5,9 +5,9 @@ CREATE TABLE IF NOT EXISTS `Role` (
 ENGINE = InnoDB;
 
 CREATE TABLE IF NOT EXISTS `User` (
-  `id` INT NOT NULL,
+  `id` VARCHAR(255) NOT NULL,
   `role` INT NULL,
-  `name` VARCHAR(45) NULL,
+  `name` VARCHAR(255) NULL,
   PRIMARY KEY (`id`),
   INDEX `FK_USER_1_idx` (`role` ASC) VISIBLE,
   CONSTRAINT `FK_USER_1`
@@ -19,7 +19,7 @@ ENGINE = InnoDB;
 
 CREATE TABLE IF NOT EXISTS `Patient` (
   `id` INT NOT NULL,
-  `user` INT NULL,
+  `user` VARCHAR(255) NULL,
   `person_data` JSON NULL,
   PRIMARY KEY (`id`),
   INDEX `FK_PATIENT_1_idx` (`user` ASC) VISIBLE,
