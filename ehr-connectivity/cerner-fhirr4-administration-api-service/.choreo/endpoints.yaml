@@ -9,12 +9,12 @@ endpoints:
   networkVisibility: Public
   context: /
   schemaFilePath: oas/PatientAPI.yaml
-- name: Cerner FHIR Practitioner API
-  port: 9092
-  type: REST
-  networkVisibility: Public
-  context: /
-  schemaFilePath: oas/PractitionerAPI.yaml
+# - name: Cerner FHIR Practitioner API
+#   port: 9092
+#   type: REST
+#   networkVisibility: Public
+#   context: /
+#   schemaFilePath: oas/PractitionerAPI.yaml
 - name: Cerner FHIR Encounter API
   port: 9094
   type: REST
@@ -33,9 +33,9 @@ endpoints:
   networkVisibility: Public
   context: /
   schemaFilePath: oas/OrganizationAPI.yaml
-- name: Cener FHIR RelatedPerson API
-  port: 9096
-  type: REST
-  networkVisibility: Public
-  context: /
-  schemaFilePath: oas/RelatedPersonAPI.yaml            
+# - name: Cener FHIR RelatedPerson API
+#   port: 9096
+#   type: REST
+#   networkVisibility: Public
+#   context: /
+#   schemaFilePath: oas/RelatedPersonAPI.yaml            
