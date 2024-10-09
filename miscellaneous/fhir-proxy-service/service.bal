@@ -18,3 +18,11 @@ service / on new http:Listener(9090) {
         check caller->respond(fhirResponse);
     }
 }
+
+service / on new http:Listener(9091) {
+
+    isolated resource function post patient(http:Caller caller, http:Request req) returns error? {
+
+        return error("Not implemented");
+    }
+}
