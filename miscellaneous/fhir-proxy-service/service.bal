@@ -12,7 +12,7 @@ service / on new http:Listener(9090) {
     isolated resource function post practitioner(http:Caller caller, http:Request req) returns error? {
 
         // Send the request to the FHIR server's Practitioner endpoint
-        http:Response fhirResponse = check fhirClient->get("/fhir/r4/Practitioner/4122622", headers = {"Authorization": authorizationHeader});
+        http:Response fhirResponse = check fhirClient->get("/fhir/r4/Practitioner/4122622", headers = {"api-key": authorizationHeader});
 
         // Forward the response from the FHIR server to the client
         check caller->respond(fhirResponse);
