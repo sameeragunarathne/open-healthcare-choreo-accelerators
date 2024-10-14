@@ -14,6 +14,7 @@ import ballerina/http;
 import ballerinax/health.fhir.r4;
 import ballerinax/health.fhirr4;
 import ballerinax/health.fhir.r4.international401;
+import ballerina/log;
 
 configurable string practitionerServiceUrl = ?;
 configurable string slotServiceUrl = ?;
@@ -118,7 +119,12 @@ service / on new fhirr4:Listener(8084, locationApiConfig) {
         http:Client locationClient = check new (locationServiceUrl);
         string locationPath = string `/Location/${id}`;
 
-        http:Response locationResponse = check locationClient->get(locationPath);
+        log:printInfo("Fetching the Location FHIR resource from the location service", serviceUrl = locationPath);
+        http:Response|http:ClientError locationResponse = locationClient->get(locationPath);
+        if locationResponse is http:ClientError {
+            log:printError("Error invoking the location service", locationResponse);
+            return r4:createFHIRError("Error invoking the location service", r4:CODE_SEVERITY_ERROR, r4:TRANSIENT_EXCEPTION);
+        }
 
         json jsonPayload = check locationResponse.getJsonPayload();
         Location|error location = check jsonPayload.cloneWithType(Location);
