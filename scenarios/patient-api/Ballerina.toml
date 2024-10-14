@@ -1,0 +1,11 @@
+[package]
+org = "wso2"
+name = "patient_api"
+version = "2.0.0"
+export = ["patient_api"]
+distribution = "2201.8.5"
+authors = ["Ballerina"]
+keywords = ["Healthcare","FHIR","Patient","r4","health.fhir.templates.international401"]
+
+[build-options]
+observabilityIncluded = true

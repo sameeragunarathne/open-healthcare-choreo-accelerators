@@ -1,4 +1,4 @@
-// Copyright (c) 2023, WSO2 LLC. (http://www.wso2.com). All Rights Reserved.
+// Copyright (c) 2024, WSO2 LLC. (http://www.wso2.com). All Rights Reserved.
 
 // This software is the property of WSO2 LLC. and its suppliers, if any.
 // Dissemination of any information or reproduction of any material contained
@@ -97,31 +97,16 @@ final r4:ResourceAPIConfig slotApiConfig = {
         }
     },
     {
-        name: "startDate",
-        active: true,
-        information: {
-            description: "Start date/time (inclusive)",
-            builtin: false,
-            documentation: "http://hl7.org/fhir/SearchParameter/Slot-appointment-type"
-        }
-    },
-    {
         name: "practitioner",
-        active: true,
-        information: {
-            description: "The practitioner that has availability",
-            builtin: false,
-            documentation: "http://hl7.org/fhir/SearchParameter/Slot-appointment-type"
-        }
+        active: true
     },
-    {
+        {
+        name: "startDate",
+        active: true
+    }, 
+        {
         name: "endDate",
-        active: true,
-        information: {
-            description: "End date/time (inclusive)",
-            builtin: false,
-            documentation: "http://hl7.org/fhir/SearchParameter/Slot-appointment-type"
-        }
+        active: true
     }
         ],
     operations: [

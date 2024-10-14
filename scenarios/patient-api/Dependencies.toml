@@ -368,9 +368,6 @@ dependencies = [
 	{org = "ballerinax", name = "health.fhir.r4"},
 	{org = "ballerinax", name = "health.fhir.r4.international401"}
 ]
-modules = [
-	{org = "ballerinax", packageName = "health.fhir.r4.parser", moduleName = "health.fhir.r4.parser"}
-]
 
 [[package]]
 org = "ballerinax"
@@ -393,9 +390,9 @@ modules = [
 ]
 
 [[package]]
-org = "wso2"
-name = "CernerFhirR4WorkflowApiService"
-version = "0.1.0"
+org = "ballerinax"
+name = "patient_api"
+version = "2.0.0"
 dependencies = [
 	{org = "ballerina", name = "http"},
 	{org = "ballerina", name = "log"},
@@ -403,10 +400,9 @@ dependencies = [
 	{org = "ballerinax", name = "health.clients.fhir"},
 	{org = "ballerinax", name = "health.fhir.r4"},
 	{org = "ballerinax", name = "health.fhir.r4.international401"},
-	{org = "ballerinax", name = "health.fhir.r4.parser"},
 	{org = "ballerinax", name = "health.fhirr4"}
 ]
 modules = [
-	{org = "wso2", packageName = "CernerFhirR4WorkflowApiService", moduleName = "CernerFhirR4WorkflowApiService"}
+	{org = "ballerinax", packageName = "patient_api", moduleName = "patient_api"}
 ]
 

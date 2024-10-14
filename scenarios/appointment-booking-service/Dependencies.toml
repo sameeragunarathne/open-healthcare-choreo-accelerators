@@ -202,9 +202,6 @@ dependencies = [
 	{org = "ballerina", name = "lang.value"},
 	{org = "ballerina", name = "observe"}
 ]
-modules = [
-	{org = "ballerina", packageName = "log", moduleName = "log"}
-]
 
 [[package]]
 org = "ballerina"
@@ -310,22 +307,6 @@ dependencies = [
 
 [[package]]
 org = "ballerinax"
-name = "health.clients.fhir"
-version = "2.0.0"
-dependencies = [
-	{org = "ballerina", name = "http"},
-	{org = "ballerina", name = "io"},
-	{org = "ballerina", name = "log"},
-	{org = "ballerina", name = "url"},
-	{org = "ballerinai", name = "observe"},
-	{org = "ballerinax", name = "health.base"}
-]
-modules = [
-	{org = "ballerinax", packageName = "health.clients.fhir", moduleName = "health.clients.fhir"}
-]
-
-[[package]]
-org = "ballerinax"
 name = "health.fhir.r4"
 version = "5.1.1"
 dependencies = [
@@ -368,9 +349,6 @@ dependencies = [
 	{org = "ballerinax", name = "health.fhir.r4"},
 	{org = "ballerinax", name = "health.fhir.r4.international401"}
 ]
-modules = [
-	{org = "ballerinax", packageName = "health.fhir.r4.parser", moduleName = "health.fhir.r4.parser"}
-]
 
 [[package]]
 org = "ballerinax"
@@ -394,19 +372,16 @@ modules = [
 
 [[package]]
 org = "wso2"
-name = "CernerFhirR4WorkflowApiService"
+name = "appointment_booking_service"
 version = "0.1.0"
 dependencies = [
 	{org = "ballerina", name = "http"},
-	{org = "ballerina", name = "log"},
 	{org = "ballerinai", name = "observe"},
-	{org = "ballerinax", name = "health.clients.fhir"},
 	{org = "ballerinax", name = "health.fhir.r4"},
 	{org = "ballerinax", name = "health.fhir.r4.international401"},
-	{org = "ballerinax", name = "health.fhir.r4.parser"},
 	{org = "ballerinax", name = "health.fhirr4"}
 ]
 modules = [
-	{org = "wso2", packageName = "CernerFhirR4WorkflowApiService", moduleName = "CernerFhirR4WorkflowApiService"}
+	{org = "wso2", packageName = "appointment_booking_service", moduleName = "appointment_booking_service"}
 ]
 
