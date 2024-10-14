@@ -4,25 +4,25 @@ version: 0.1
 # +required List of endpoints to create
 endpoints:
 - name: Cerner FHIR Practitioner API
-  port: 9092
+  port: 8081
   type: REST
   networkVisibility: Public
   context: /
   schemaFilePath: oas/PractitionerAPI.yaml
 - name: Cerner FHIR Location API
-  port: 9095
+  port: 8084
   type: REST
   networkVisibility: Public
   context: /
   schemaFilePath: oas/LocationAPI.yaml       
 - name: Cerner FHIR Appointment API
-  port: 9099
+  port: 8083
   type: REST
   networkVisibility: Public
   context: /
   schemaFilePath: oas/AppointmentAPI.yaml
 - name: Cerner FHIR Slot API
-  port: 9098
+  port: 8082
   type: REST
   networkVisibility: Public
   context: /
