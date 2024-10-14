@@ -35,7 +35,7 @@ public type Patient international401:Patient;
 // Define the FHIR server connection configuration. If your server requires authentication, you can configure it using
 // the `authConfig` field.
 fhir:FHIRConnectorConfig fhirServerConfig = {
-    baseURL: "https://hapi.fhir.org/baseR4",
+    baseURL: baseURL,
     mimeType: fhir:FHIR_JSON,
     authConfig: (tokenUrl == "") ? () : {
         tokenUrl: tokenUrl,
